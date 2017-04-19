@@ -1,10 +1,10 @@
 import React from 'react';
-import RangeSelector from './rangeSelector.component';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { IntlProvider } from 'react-intl';
 import InputRange from 'react-input-range';
+import RangeSelector from './rangeSelector.component';
 
 
 describe('RangeSelector: Component', () => {
@@ -19,7 +19,7 @@ describe('RangeSelector: Component', () => {
   };
 
   const component = (props = {}) => (
-    <IntlProvider locale='en'>
+    <IntlProvider locale="en">
       <RangeSelector {...defaultProps} {...props} />
     </IntlProvider>
   );
