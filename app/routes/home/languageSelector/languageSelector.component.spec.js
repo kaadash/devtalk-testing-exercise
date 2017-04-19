@@ -34,7 +34,7 @@ describe('LanguageSelector: Component', () => {
   it('should change language', () => {
     const push = spy(defaultProps.router, 'push');
     const wrapper = shallow(component());
-    wrapper.instance().handleLanguageChange({target: {value: 'de'}});
+    wrapper.instance().handleLanguageChange({ target: { value: 'de' } });
     expect(push.withArgs('/de').calledOnce).to.be.true;
   });
 });
