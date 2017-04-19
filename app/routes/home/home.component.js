@@ -8,7 +8,6 @@ import TeamsList from './teamsList/teamsList.component';
 import RangeSelector from './rangeSelector/rangeSelector.component';
 import LanguageSelector from './languageSelector/languageSelector.component';
 
-
 export default class Home extends PureComponent {
   static propTypes = {
     teams: PropTypes.object,

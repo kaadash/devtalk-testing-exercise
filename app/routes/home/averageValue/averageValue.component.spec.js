@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
 import AverageValue from './averageValue.component';
 
-describe('Simple: Component', () => {
+describe('AverageValue: Component', () => {
   const defaultProps = {
     arithmeticAverage: 22,
   };
