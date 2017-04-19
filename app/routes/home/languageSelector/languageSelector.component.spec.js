@@ -1,24 +1,21 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {expect} from 'chai';
-import {spy, assert} from 'sinon';
+import { shallow } from 'enzyme';
+import { expect } from 'chai';
+import { spy } from 'sinon';
 import LanguageSelector from './languageSelector.component';
 import { appLocales } from '../../../i18n';
-import { Route } from 'react-router';
-
 
 describe('LanguageSelector: Component', () => {
   const defaultProps = {
     language: 'en',
     setLanguage: () => {},
     router: {
-      push: () => {}
+      push: () => {},
+      location: {
+        pathname: ''
+      }
     },
   };
-
-  const routeMock = () => (
-    <Route/>
-  );
 
   const component = (props = {}) => (
     <LanguageSelector {...defaultProps} {...props} />
@@ -35,10 +32,9 @@ describe('LanguageSelector: Component', () => {
   });
 
   it('should change language', () => {
-    // const push = spy()
-    // const wrapper = shallow(component());
-    // wrapper.instance().handleLanguageChange('en');
-    //
-    // expect(assert()).to.be.true;
+    const push = spy(defaultProps.router, 'push');
+    const wrapper = shallow(component());
+    wrapper.instance().handleLanguageChange({target: {value: 'de'}});
+    expect(push.withArgs('/de').calledOnce).to.be.true;
   });
 });
